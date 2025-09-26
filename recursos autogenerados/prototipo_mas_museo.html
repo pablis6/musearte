@@ -1,0 +1,215 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MuseArte - Más de este museo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f8;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px #bbb;
+    }
+    header {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 1em;
+      padding-bottom: 0.5em;
+      border-bottom: 2px solid #e3e6fc;
+    }
+    .logo-musearte {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+    }
+    .logo-musearte img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: 2px solid #3f51b5;
+      background: #e3e6fc;
+      object-fit: cover;
+      margin-right: 0.4em;
+    }
+    .logo-musearte span {
+      font-size: 1.35em;
+      font-weight: bold;
+      color: #1a237e;
+      letter-spacing: 1px;
+      font-family: inherit;
+    }
+    nav {
+      background: #1a237e;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 56px;
+      border-bottom: 3px solid #3f51b5;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: 10px 18px;
+      border-radius: 8px;
+    }
+    nav a:focus, nav a[aria-current="page"] {
+      background: #3949ab;
+      outline: 2px solid #fff;
+    }
+    main {
+      flex: 1;
+      padding: 1.3em 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+    }
+    .lista-obras {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3em;
+    }
+    .obra {
+      background: #fff;
+      border-radius: 13px;
+      box-shadow: 0 1px 3px #e3e6fc;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7em;
+    }
+    .obra-header {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+    }
+    .obra-imagen {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid #3f51b5;
+      background: #e3e6fc;
+      flex-shrink: 0;
+    }
+    .obra-titulo {
+      font-size: 1.08em;
+      font-weight: bold;
+      color: #1a237e;
+      margin: 0;
+    }
+    .obra-desc {
+      font-size: 1em;
+      color: #24243a;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .obra-loc {
+      font-size: 0.98em;
+      color: #3f51b5;
+      margin: 0;
+    }
+    .obra-acciones {
+      margin-top: 0.2em;
+      display: flex;
+      flex-direction: row;
+      gap: 0.7em;
+    }
+    .obra-btn {
+      background: #3f51b5;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.6em 1.3em;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .obra-btn:focus {
+      background: #1a237e;
+      outline: 2px solid #fff;
+    }
+    @media (max-width: 480px) {
+      .obra-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6em;
+      }
+      .obra-imagen {
+        width: 100%;
+        height: auto;
+        max-width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-musearte" aria-label="Logo MuseArte">
+      <img src="https://img.icons8.com/ios-filled/50/1a237e/museum.png" alt="Logo MuseArte">
+      <span>MuseArte</span>
+    </div>
+  </header>
+  <nav role="navigation" aria-label="Menú principal">
+    <a href="#" tabindex="0">Inicio</a>
+    <a href="#" aria-current="page" tabindex="0">Más de este museo</a>
+    <a href="#" tabindex="0">Mis opciones</a>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
+    <section class="lista-obras" aria-label="Obras y exposiciones disponibles">
+      <article class="obra" aria-labelledby="titulo-obra-1">
+        <div class="obra-header">
+          <img class="obra-imagen" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Vincent_Willem_van_Gogh_128.jpg/320px-Vincent_Willem_van_Gogh_128.jpg" alt="La noche estrellada de Vincent van Gogh">
+          <h2 class="obra-titulo" id="titulo-obra-1">La noche estrellada</h2>
+        </div>
+        <p class="obra-desc">
+          Obra maestra de Van Gogh (1889). Un cielo vibrante y nocturno lleno de movimiento sobre un tranquilo pueblo.
+        </p>
+        <p class="obra-loc">Planta 2, Sala Van Gogh</p>
+        <div class="obra-acciones">
+          <button class="obra-btn" aria-label="Más información sobre La noche estrellada">Más información</button>
+        </div>
+      </article>
+      <article class="obra" aria-labelledby="titulo-obra-2">
+        <div class="obra-header">
+          <img class="obra-imagen" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Claude_Monet_-_Impression%2C_Sunrise.jpg" alt="Impresión, sol naciente de Claude Monet">
+          <h2 class="obra-titulo" id="titulo-obra-2">Impresión, sol naciente</h2>
+        </div>
+        <p class="obra-desc">
+          Pintura icónica de Claude Monet (1872) que dio nombre al impresionismo. Captura la luz y el color en el puerto de Le Havre.
+        </p>
+        <p class="obra-loc">Planta 1, Sala Monet</p>
+        <div class="obra-acciones">
+          <button class="obra-btn" aria-label="Más información sobre Impresión, sol naciente">Más información</button>
+        </div>
+      </article>
+      <article class="obra" aria-labelledby="titulo-obra-3">
+        <div class="obra-header">
+          <img class="obra-imagen" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/PicassoGuernica.jpg/320px-PicassoGuernica.jpg" alt="Guernica de Pablo Picasso">
+          <h2 class="obra-titulo" id="titulo-obra-3">Guernica</h2>
+        </div>
+        <p class="obra-desc">
+          Mural de Pablo Picasso (1937) que denuncia el horror de la guerra. Destaca por su expresividad y simbolismo en blanco y negro.
+        </p>
+        <p class="obra-loc">Planta 3, Sala Picasso</p>
+        <div class="obra-acciones">
+          <button class="obra-btn" aria-label="Más información sobre Guernica">Más información</button>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
+```

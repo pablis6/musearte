@@ -1,0 +1,210 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MuseArte · Mis opciones</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f8;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px #bbb;
+    }
+    .logo-musearte {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e3e6fc;
+      border-bottom: 2.5px solid #3f51b5;
+      padding: 1.1em .5em .7em .5em;
+    }
+    .logo-musearte span {
+      font-size: 1.65em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #1a237e;
+      text-shadow: 0 1px 0 #fff, 0 0px 9px #3f51b5a0;
+      display: flex;
+      align-items: center;
+      gap: .5em;
+    }
+    .logo-musearte .icono {
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+      background: #3f51b5;
+      border-radius: 8px;
+      margin-right: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-musearte svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+    }
+    nav {
+      background: #1a237e;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 60px;
+      border-bottom: 3px solid #3f51b5;
+      font-size: 1.1em;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.08em;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+    nav a:focus, nav a[aria-current="page"] {
+      background: #3949ab;
+      outline: 2px solid #fff;
+    }
+    main {
+      flex: 1;
+      padding: 1.5em 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
+    section.opciones {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6em;
+    }
+    .selector-contenedor {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7em;
+      max-width: 100%;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      cursor: pointer;
+    }
+    select {
+      font-size: 1em;
+      padding: 0.5em;
+      border-radius: 6px;
+      border: 1px solid #bbb;
+    }
+    .accesibilidad-contenedor {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      padding-top: .5em;
+    }
+    .accesibilidad-opcion {
+      display: flex;
+      align-items: center;
+      gap: 0.8em;
+    }
+    .accesibilidad-opcion input[type="checkbox"], 
+    .accesibilidad-opcion input[type="radio"] {
+      width: 1.3em;
+      height: 1.3em;
+      accent-color: #3f51b5;
+      margin-right: 0.2em;
+    }
+    .descripcion-accesibilidad {
+      font-size: 0.97em;
+      color: #3949ab;
+      margin-top: 0.3em;
+    }
+    .sr-only {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    @media (max-width: 480px) {
+      .logo-musearte span {
+        font-size: 1.18em;
+      }
+      nav {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-musearte" aria-label="Logo MuseArte">
+    <span>
+      <span class="icono" aria-hidden="true">
+        <svg viewBox="0 0 32 32" focusable="false" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="#fff" /><ellipse cx="16" cy="18" rx="7" ry="10" fill="#3f51b5" /><circle cx="16" cy="18" r="3.2" fill="#fff" /><ellipse cx="16" cy="14" rx="2" ry="1.3" fill="#3f51b5" /></svg>
+      </span>
+      MuseArte
+    </span>
+  </div>
+  <nav role="navigation" aria-label="Menú principal">
+    <a href="#" tabindex="0">Inicio</a>
+    <a href="#" tabindex="0">Más de este museo</a>
+    <a href="#" aria-current="page" tabindex="0">Mis opciones</a>
+  </nav>
+  <main id="main-content" tabindex="-1">
+    <section class="opciones" aria-label="Opciones personales y de accesibilidad">
+      <form class="selector-contenedor" aria-labelledby="idioma-label">
+        <label id="idioma-label" for="selector-idioma">Idioma o formato de la información:</label>
+        <select id="selector-idioma" aria-describedby="idioma-descripcion">
+          <option value="lse">Lengua de signos español</option>
+          <option value="bsl">Lengua de signos inglés</option>
+          <option value="en-voz">Inglés (voz)</option>
+          <option value="es-voz">Español (voz)</option>
+          <option value="en-texto">Inglés (texto)</option>
+          <option value="es-texto">Español (texto)</option>
+        </select>
+        <span id="idioma-descripcion" class="sr-only">Elige el formato o idioma en que prefieres la información durante la visita.</span>
+      </form>
+      <div class="accesibilidad-contenedor" aria-labelledby="accesibilidad-label">
+        <label id="accesibilidad-label" style="font-size:1.06em;">Opciones de accesibilidad:</label>
+        <div class="accesibilidad-opcion">
+          <input type="checkbox" id="alto-contraste" name="alto-contraste" aria-describedby="desc-contraste">
+          <label for="alto-contraste">Activar alto contraste</label>
+        </div>
+        <div class="accesibilidad-opcion">
+          <input type="checkbox" id="letra-grande" name="letra-grande" aria-describedby="desc-letra">
+          <label for="letra-grande">Texto grande</label>
+        </div>
+        <div class="accesibilidad-opcion">
+          <input type="checkbox" id="lector-pantalla" name="lector-pantalla" aria-describedby="desc-lector">
+          <label for="lector-pantalla">Compatibilidad con lector de pantalla</label>
+        </div>
+        <div class="accesibilidad-opcion">
+          <input type="checkbox" id="subtitulos" name="subtitulos" aria-describedby="desc-subtitulos">
+          <label for="subtitulos">Mostrar subtítulos en videos</label>
+        </div>
+        <div class="accesibilidad-opcion">
+          <input type="checkbox" id="audio-descripcion" name="audio-descripcion" aria-describedby="desc-ad">
+          <label for="audio-descripcion">Activar audiodescripción</label>
+        </div>
+        <div class="accesibilidad-opcion">
+          <input type="checkbox" id="vibracion" name="vibracion" aria-describedby="desc-vibracion">
+          <label for="vibracion">Alertas con vibración</label>
+        </div>
+        <span class="descripcion-accesibilidad" id="desc-contraste">Aumenta el contraste de los elementos para facilitar la visión.</span>
+        <span class="descripcion-accesibilidad" id="desc-letra">Mejora la legibilidad ampliando el tamaño de los textos clave.</span>
+        <span class="descripcion-accesibilidad" id="desc-lector">Optimiza la navegación para lectores de pantalla.</span>
+        <span class="descripcion-accesibilidad" id="desc-subtitulos">Agrega subtítulos automáticos en los contenidos visibles.</span>
+        <span class="descripcion-accesibilidad" id="desc-ad">Describe imágenes y videos para personas ciegas.</span>
+        <span class="descripcion-accesibilidad" id="desc-vibracion">Notificaciones por vibración si el dispositivo lo permite.</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+```

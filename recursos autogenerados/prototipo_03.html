@@ -1,0 +1,157 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visita Accesible al Museo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f8;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px #bbb;
+    }
+    nav {
+      background: #1a237e;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 60px;
+      border-bottom: 3px solid #3f51b5;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+    nav a:focus, nav a[aria-current="page"] {
+      background: #3949ab;
+      outline: 2px solid #fff;
+    }
+    main {
+      flex: 1;
+      padding: 1.5em 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+    }
+    .selector-contenedor {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7em;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    select {
+      font-size: 1em;
+      padding: 0.5em;
+      border-radius: 6px;
+      border: 1px solid #bbb;
+    }
+    .contenido-obra {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+    }
+    .contenido-obra img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #3f51b5;
+    }
+    .descripcion {
+      font-size: 1.05em;
+      line-height: 1.6;
+      text-align: left;
+      max-width: 100%;
+    }
+    .boton-audiodescripcion {
+      background: #3f51b5;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.7em 1.7em;
+      font-size: 1.1em;
+      cursor: pointer;
+      margin-top: 0.5em;
+      transition: background 0.2s;
+    }
+    .boton-audiodescripcion:focus {
+      background: #1a237e;
+      outline: 2px solid #fff;
+    }
+    footer {
+      background: #e3e6fc;
+      padding: 1em 1em 1.3em 1em;
+      font-size: 0.98em;
+      color: #1a237e;
+      border-top: 2px solid #3f51b5;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+    footer a {
+      color: #1a237e;
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      .contenido-obra img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav role="navigation" aria-label="Menú principal">
+    <a href="#" aria-current="page" tabindex="0">Inicio</a>
+    <a href="#" tabindex="0">Más de este museo</a>
+    <a href="#" tabindex="0">Mis opciones</a>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
+    <section class="selector-contenedor" aria-labelledby="idioma-label">
+      <label id="idioma-label" for="selector-idioma">Selecciona idioma o formato:</label>
+      <select id="selector-idioma" aria-describedby="idioma-descripcion">
+        <option value="lse">Lengua de signos español</option>
+        <option value="bsl">Lengua de signos inglés</option>
+        <option value="en-voz">Inglés (voz)</option>
+        <option value="es-voz">Español (voz)</option>
+        <option value="en-texto">Inglés (texto)</option>
+        <option value="es-texto">Español (texto)</option>
+      </select>
+      <span id="idioma-descripcion" class="sr-only">Elige el formato o idioma en que prefieres la información de la obra.</span>
+    </section>
+
+    <section class="contenido-obra" aria-labelledby="titulo-obra">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Vincent_Willem_van_Gogh_128.jpg/320px-Vincent_Willem_van_Gogh_128.jpg" alt="La noche estrellada de Vincent van Gogh, pintura con remolinos y estrellas brillantes en un cielo azul oscuro">
+      <h2 id="titulo-obra" style="font-size:1.3em; margin:0;">La noche estrellada</h2>
+      <div class="descripcion" id="descripcion-obra">
+        Obra maestra de Vincent van Gogh, creada en 1889. Muestra un cielo nocturno vibrante y lleno de movimiento sobre un tranquilo pueblo. Los remolinos y las estrellas reflejan la emoción y la imaginación del artista.
+      </div>
+      <button class="boton-audiodescripcion" aria-label="Activar audiodescripción de la obra">Activar audiodescripción</button>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    Museo de Arte Moderno, Planta 2, Sala Van Gogh.
+    <a href="#" tabindex="0">Más información sobre La noche estrellada</a>
+  </footer>
+</body>
+</html>
+```

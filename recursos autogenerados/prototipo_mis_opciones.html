@@ -1,0 +1,179 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MuseArte - Mis opciones</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f8;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px #bbb;
+    }
+    .logo-musearte {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ede7fe;
+      height: 68px;
+      border-bottom: 2px solid #bcbcbc;
+    }
+    .logo-musearte img {
+      width: 38px;
+      height: 38px;
+      margin-right: 14px;
+      border-radius: 6px;
+      border: 2px solid #3f51b5;
+      background: #fff;
+    }
+    .logo-musearte span {
+      font-size: 1.45em;
+      font-weight: bold;
+      color: #3f51b5;
+      letter-spacing: 1px;
+    }
+    nav {
+      background: #1a237e;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 60px;
+      border-bottom: 3px solid #3f51b5;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+    nav a:focus, nav a[aria-current="page"] {
+      background: #3949ab;
+      outline: 2px solid #fff;
+    }
+    main {
+      flex: 1;
+      padding: 1.5em 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
+    .selector-contenedor {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7em;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    select {
+      font-size: 1em;
+      padding: 0.5em;
+      border-radius: 6px;
+      border: 1px solid #bbb;
+      background-color: #fff;
+    }
+    .accesibilidad-opciones {
+      margin-top: 1em;
+      background: #e3e6fc;
+      border-radius: 12px;
+      border: 1px solid #bcbcbc;
+      padding: 1em 1.2em;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      max-width: 100%;
+    }
+    .accesibilidad-opciones legend {
+      color: #1a237e;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 0.7em;
+    }
+    .accesibilidad-check {
+      display: flex;
+      align-items: center;
+      gap: 0.8em;
+    }
+    .accesibilidad-check input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      accent-color: #3f51b5;
+    }
+    .accesibilidad-check label {
+      margin: 0;
+      font-weight: normal;
+      font-size: 1.07em;
+    }
+    .sr-only {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      top: auto;
+      overflow: hidden;
+    }
+    @media (max-width: 480px) {
+      .logo-musearte img {
+        width: 30px;
+        height: 30px;
+      }
+      main {
+        padding: 1em 0.5em;
+      }
+      .accesibilidad-opciones {
+        padding: 0.7em 0.7em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="logo-musearte" role="banner">
+    <img src="https://cdn-icons-png.flaticon.com/512/3076/3076786.png" alt="Logo de MuseArte">
+    <span>MuseArte</span>
+  </header>
+  <nav role="navigation" aria-label="Menú principal">
+    <a href="#" tabindex="0">Inicio</a>
+    <a href="#" tabindex="0">Más de este museo</a>
+    <a href="#" aria-current="page" tabindex="0">Mis opciones</a>
+  </nav>
+  <main id="main-content" tabindex="-1">
+    <section class="selector-contenedor" aria-labelledby="idioma-label">
+      <label id="idioma-label" for="selector-idioma">Idioma y formato del contenido</label>
+      <select id="selector-idioma" aria-describedby="idioma-descripcion">
+        <option value="lse">Lengua de signos español</option>
+        <option value="bsl">Lengua de signos inglés</option>
+        <option value="en-voz">Inglés (voz)</option>
+        <option value="es-voz">Español (voz)</option>
+        <option value="en-texto">Inglés (texto)</option>
+        <option value="es-texto">Español (texto)</option>
+      </select>
+      <span id="idioma-descripcion" class="sr-only">Elige el formato o idioma en que prefieres recibir la información.</span>
+    </section>
+    <form class="accesibilidad-opciones" aria-labelledby="accesibilidad-titulo">
+      <legend id="accesibilidad-titulo">Opciones de accesibilidad</legend>
+      <div class="accesibilidad-check">
+        <input type="checkbox" id="contraste" name="contraste" aria-describedby="contraste-desc">
+        <label for="contraste">Activar alto contraste</label>
+      </div>
+      <span id="contraste-desc" class="sr-only">Activa una paleta de colores de alto contraste.</span>
+      <div class="accesibilidad-check">
+        <input type="checkbox" id="lector-pantalla" name="lector-pantalla" aria-describedby="lector-desc">
+        <label for="lector-pantalla">Compatibilidad con lector de pantalla</label>
+      </div>
+      <span id="lector-desc" class="sr-only">Mejora la experiencia para lectores de pantalla.</span>
+    </form>
+  </main>
+</body>
+</html>
+```
