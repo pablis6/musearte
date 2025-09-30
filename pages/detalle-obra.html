@@ -1,46 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-    <header>
-        <h1>Mi Portafolio</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="about.html">Sobre Nosotros</a></li>
-                <li><a href="services.html">Servicios</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Proyectos Recientes</h2>
-            <article>
-                <h3>Proyecto 1</h3>
-                <img src="ruta/a/imagen1.jpg" alt="Descripción del Proyecto 1">
-                <p>Descripción breve del Proyecto 1.</p>
-            </article>
-            <article>
-                <h3>Proyecto 2</h3>
-                <img src="ruta/a/imagen2.jpg" alt="Descripción del Proyecto 2">
-                <p>Descripción breve del Proyecto 2.</p>
-            </article>
-            <article>
-                <h3>Proyecto 3</h3>
-                <img src="ruta/a/imagen3.jpg" alt="Descripción del Proyecto 3">
-                <p>Descripción breve del Proyecto 3.</p>
-            </article>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Mi Proyecto. Todos los derechos reservados.</p>
-    </footer>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle obra</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/detalle-obra.css" />
     <script src="../js/script.js"></script>
-</body>
+  </head>
+  <body>
+    <header id="main-header"></header>
+    <main>
+      <section class="selector-contenedor" aria-labelledby="idioma-label">
+        <label id="idioma-label" for="selector-idioma"
+          >Selecciona idioma o formato:</label
+        >
+        <select id="selector-idioma" aria-describedby="idioma-descripcion">
+          <option value="lse">Lengua de signos español</option>
+          <option value="bsl">Lengua de signos inglés</option>
+          <option value="en-voz">Inglés (voz)</option>
+          <option value="es-voz">Español (voz)</option>
+          <option value="en-texto">Inglés (texto)</option>
+          <option value="es-texto">Español (texto)</option>
+        </select>
+        <span id="idioma-descripcion" class="sr-only"
+          >Elige el formato o idioma en que prefieres la información de la
+          obra.</span
+        >
+      </section>
+
+      <section class="contenido-obra" aria-labelledby="titulo-obra">
+        <img
+          src="https://content3.cdnprado.net/imagenes/Documentos/imgsem/f0/f0f5/f0f52ca5-546a-44c4-8da0-f3c2603340b5/a88d41b7-8f41-459f-ab8f-7e9efcde99c7.jpg"
+          alt="El 3 de mayo de 1808 en Madrid"
+        />
+        <h2 id="titulo-obra" style="font-size: 1.3em; margin: 0">
+          El 3 de mayo de 1808 en Madrid
+        </h2>
+        <div class="descripcion" id="descripcion-obra">
+          Obra maestra de Francisco de Goya, creada en 1814. Muestra la
+          brutalidad de la guerra y la lucha del pueblo español contra la
+          ocupación napoleónica. La escena está llena de emoción y dramatismo,
+          con un uso impactante de la luz y la sombra.
+        </div>
+        <div class="botonera-obra">
+          <div class="obra-reproduccion" aria-label="Reproducción de la obra">
+            <span
+              id="icon-play-obra-detalle"
+              style="display: inline"
+              onclick="playAudio('obra-detalle')"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#3f51b5"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM10.6935 15.8458L15.4137 13.059C16.1954 12.5974 16.1954 11.4026 15.4137 10.941L10.6935 8.15419C9.93371 7.70561 9 8.28947 9 9.21316V14.7868C9 15.7105 9.93371 16.2944 10.6935 15.8458Z"
+                    fill="#3f51b5"
+                  ></path>
+                </g>
+              </svg>
+            </span>
+            <span
+              id="icon-pause-obra-detalle"
+              style="display: none"
+              onclick="pauseAudio('obra-detalle')"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#3f51b5"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM8.07612 8.61732C8 8.80109 8 9.03406 8 9.5V14.5C8 14.9659 8 15.1989 8.07612 15.3827C8.17761 15.6277 8.37229 15.8224 8.61732 15.9239C8.80109 16 9.03406 16 9.5 16C9.96594 16 10.1989 16 10.3827 15.9239C10.6277 15.8224 10.8224 15.6277 10.9239 15.3827C11 15.1989 11 14.9659 11 14.5V9.5C11 9.03406 11 8.80109 10.9239 8.61732C10.8224 8.37229 10.6277 8.17761 10.3827 8.07612C10.1989 8 9.96594 8 9.5 8C9.03406 8 8.80109 8 8.61732 8.07612C8.37229 8.17761 8.17761 8.37229 8.07612 8.61732ZM13.0761 8.61732C13 8.80109 13 9.03406 13 9.5V14.5C13 14.9659 13 15.1989 13.0761 15.3827C13.1776 15.6277 13.3723 15.8224 13.6173 15.9239C13.8011 16 14.0341 16 14.5 16C14.9659 16 15.1989 16 15.3827 15.9239C15.6277 15.8224 15.8224 15.6277 15.9239 15.3827C16 15.1989 16 14.9659 16 14.5V9.5C16 9.03406 16 8.80109 15.9239 8.61732C15.8224 8.37229 15.6277 8.17761 15.3827 8.07612C15.1989 8 14.9659 8 14.5 8C14.0341 8 13.8011 8 13.6173 8.07612C13.3723 8.17761 13.1776 8.37229 13.0761 8.61732Z"
+                    fill="#3f51b5"
+                  ></path>
+                </g>
+              </svg>
+            </span>
+          </div>
+          <button
+            class="boton-videodescripcion"
+            aria-label="Activar videodescripción de la obra"
+          >
+            Activar videodescripción
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer id="main-footer"></footer>
+  </body>
 </html>

@@ -5,11 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mis Opciones</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/mis-opciones.css" />
     <script src="../js/script.js"></script>
   </head>
   <body>
     <header id="main-header"></header>
-    <main></main>
+    <main>
+      <section class="selector-contenedor" aria-labelledby="idioma-label">
+        <label id="idioma-label" for="selector-idioma"
+          >Idioma y formato del contenido predeterminado</label
+        >
+        <select id="selector-idioma" aria-describedby="idioma-descripcion">
+          <option value="lse">Lengua de signos español</option>
+          <option value="bsl">Lengua de signos inglés</option>
+          <option value="en-voz">Inglés (voz)</option>
+          <option value="es-voz">Español (voz)</option>
+          <option value="en-texto">Inglés (texto)</option>
+          <option value="es-texto">Español (texto)</option>
+        </select>
+        <span id="idioma-descripcion" class="sr-only"
+          >Elige el formato o idioma en que prefieres recibir la
+          información.</span
+        >
+      </section>
+      <form
+        class="accesibilidad-opciones"
+        aria-labelledby="accesibilidad-titulo"
+      >
+        <legend id="accesibilidad-titulo">Opciones de accesibilidad</legend>
+        <div>
+          <div class="accesibilidad-check">
+            <input
+              type="checkbox"
+              id="contraste"
+              name="contraste"
+              aria-describedby="contraste-desc"
+            />
+            <label for="contraste">Activar alto contraste</label>
+          </div>
+          <span class="descripcion-accesibilidad" id="desc-contraste"
+            >Aumenta el contraste de los elementos para facilitar la
+            visión.</span
+          >
+          <span id="contraste-desc" class="sr-only"
+            >Activa una paleta de colores de alto contraste.</span
+          >
+        </div>
+        <div>
+          <div class="accesibilidad-check">
+            <input
+              type="checkbox"
+              id="lector-pantalla"
+              name="lector-pantalla"
+              aria-describedby="lector-desc"
+            />
+            <label for="lector-pantalla"
+              >Compatibilidad con lector de pantalla</label
+            >
+          </div>
+          <span class="descripcion-accesibilidad" id="desc-lector"
+            >Optimiza la navegación para lectores de pantalla.</span
+          >
+          <span id="lector-desc" class="sr-only"
+            >Mejora la experiencia para lectores de pantalla.</span
+          >
+        </div>
+      </form>
+    </main>
     <footer id="main-footer"></footer>
   </body>
 </html>

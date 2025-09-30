@@ -1,0 +1,53 @@
+.selector-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+}
+label {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+select {
+  font-size: 1em;
+  padding: 0.5em;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  background-color: #fff;
+}
+.accesibilidad-opciones {
+  margin-top: 1em;
+  background: #e3e6fc;
+  border-radius: 12px;
+  border: 1px solid #bcbcbc;
+  padding: 1em 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 100%;
+}
+.accesibilidad-opciones legend {
+  color: #1a237e;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 0.7em;
+}
+.accesibilidad-check {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+.accesibilidad-check input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #3f51b5;
+}
+.accesibilidad-check label {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1.07em;
+}
+.descripcion-accesibilidad {
+  font-size: 0.97em;
+  color: #3949ab;
+  margin-top: 0.3em;
+}
