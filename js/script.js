@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Cargar el header
   const headerPath = window.location.pathname.includes("/pages/")
     ? "../templates/header.html"
-    : "templates/header.html";
+    : "/templates/header.html";
   fetch(headerPath)
     .then((response) => response.text())
     .then((data) => {
