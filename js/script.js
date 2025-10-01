@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   // Cargar el footer
-  fetch("/templates/footer.html")
+  fetch("../templates/footer.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("main-footer").innerHTML = data;
