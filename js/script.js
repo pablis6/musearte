@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function activarCamara() {
   navigator.mediaDevices
-    .getUserMedia({ video: true })
+    .getUserMedia({ video: { facingMode: "environment" }, audio: false })
     .then((stream) => {
       const botonCamara = document.getElementById("boton-camara");
       const video = document.getElementById("camara");
