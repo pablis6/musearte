@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Cargar el footer
   const footerPath = window.location.pathname.includes("/pages/")
     ? "../templates/footer.html"
-    : "templates/footer.html";
+    : "/templates/footer.html";
   fetch(footerPath)
     .then((response) => response.text())
     .then((data) => {
