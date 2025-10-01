@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Cargar el header
-  fetch("../templates/header.html")
+  const headerPath = window.location.pathname.includes("/pages/")
+    ? "../templates/header.html"
+    : "templates/header.html";
+  fetch(headerPath)
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("main-header").innerHTML = data;
@@ -23,7 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   // Cargar el footer
-  fetch("../templates/footer.html")
+  const footerPath = window.location.pathname.includes("/pages/")
+    ? "../templates/footer.html"
+    : "templates/footer.html";
+  fetch(footerPath)
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("main-footer").innerHTML = data;
