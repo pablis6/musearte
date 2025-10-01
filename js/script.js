@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Cargar el header
   const headerPath = window.location.pathname.includes("/pages/")
     ? "../templates/header.html"
-    : "/templates/header.html";
+    : "/musearte/templates/header.html";
   fetch(headerPath)
     .then((response) => response.text())
     .then((data) => {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Cargar el footer
   const footerPath = window.location.pathname.includes("/pages/")
     ? "../templates/footer.html"
-    : "/templates/footer.html";
+    : "/musearte/templates/footer.html";
   fetch(footerPath)
     .then((response) => response.text())
     .then((data) => {
@@ -47,7 +47,7 @@ function activarCamara() {
       botonCamara.style.display = "none";
       video.style.display = "block";
       setTimeout(() => {
-        window.location.href = "/pages/detalle-obra.html";
+        window.location.href = "pages/detalle-obra.html";
       }, 5000);
     })
     .catch((err) => {
