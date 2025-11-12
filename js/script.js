@@ -47,7 +47,7 @@ function activarCamara() {
       botonCamara.style.display = "none";
       video.style.display = "block";
       setTimeout(() => {
-        video.style.border = "5px solid green";
+        video.classList.add("borde-verde");
       }, 4500);
       setTimeout(() => {
         window.location.href = "pages/detalle-obra.html";
